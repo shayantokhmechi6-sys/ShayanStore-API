@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer , String,ForeignKey
+from sqlalchemy import Column, Integer , String,ForeignKey,Boolean
 from database import Base
 
 class User(Base):
@@ -9,6 +9,7 @@ class User(Base):
     name=Column(String(15))
     mobile_phone=Column(String(11), unique=True)
     home_address=Column(String)
+    is_admin=Column(Boolean,default=False)
     
 class Product(Base):
     __tablename__ = "products"
